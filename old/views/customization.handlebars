@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Order Details</title>
+  <style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<body>            
+  <p>Our agent will get back to you soon </p>
+  <table>
+  <tr>
+    <td>XS</td>
+    <td>{{xsQuantity}}</td>
+  </tr>
+  <tr>
+    <td>S</td>
+    <td>{{sQuantity}}</td>
+  </tr>
+  <tr>
+    <td>M</td>
+    <td>{{mQuantity}}</td>
+  </tr>
+  <tr>
+    <td>L</td>
+    <td>{{lQuantity}}</td>
+  </tr>
+  <tr>
+    <td>XL</td>
+    <td>{{xlQuantity}}</td>
+  </tr>
+  <tr>
+    <td>XXL</td>
+    <td>{{xxlQuantity}}</td>
+  </tr>
+</table>
+<p>The pdf of your design is: </p>
+<p>Regards,</p>
+<p>{{email}}</p>
+</body>
+</html>
