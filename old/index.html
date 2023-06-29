@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="utf-8">
     <title>TShirt Editor</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,95 +14,78 @@
     <![endif]-->
     <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-	<script type="text/javascript" src="js/fabric.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
-	<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
-	<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1022.0.min.js"></script>
+    <script type="text/javascript" src="js/fabric.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1022.0.min.js"></script>
     <!-- Le styles -->
     <link type="text/css" rel="stylesheet" href="css/jquery.miniColors.css" />
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-      integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-	
-  </head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-  <body class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">
+</head>
 
-  <!-- Navbar
+<body class="preview" data-spy="scroll" data-target=".subnav" data-offset="80">
+
+    <!-- Navbar
     ================================================== -->
     <div class="container" style="margin-top: 30px;">
-	<section id="typography">
-	<nav>
-      <ul>
-        <li>
-          <a href="#">
-            <img src="/old/img/H-logo.png" class="logo" />
-          </a>
-        </li>
-        <li>
-			<a href="#" id="text-link">
-				<i class="fa-solid fa-t"></i>
-				<span class="nav-item">Text</span>
-			</a>
-		</li>
-        <li>
-          <a href="about.html">
-            <i class="fa-solid fa-image"></i>
-            <span class="nav-item">Images</span>
-          </a>
-        </li>
-        <li>
-          <a href="services.html">
-            <i class="fa-solid fa-fill-drip"></i>
-            <span class="nav-item">Material Colour</span>
-          </a>
-        </li>
-        <li>
-          <a href="contact.html">
-            <i class="fa-solid fa-message"></i>
-            <span class="nav-item">Contact Us</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-sign-out-alt"></i>
-            <span class="nav-item">Log out</span>
-          </a>
-        </li>
-      </ul>
-    </nav>
-			<!-- <nav>
-				<div class="logo-container">
-					<img src="/old/img/H-logo.png" alt="Logo" class="logo">
-					<div class="page-head">
-						<h3 style="color: #000000;">Customize Your Product</h3>
-					</div>
-				</div>
-				<button id="signup" class="signup" title="Sign up" onclick="window.open('https://www.hattyhood.com/register', '_blank')">Sign Up</button>
-				<button id="imgsavepdf" class="save-btn" title="Save">Save</button>
-			</nav> -->
-		
-		  <!-- Headings & Paragraph Copy -->
-		  	<div class="row">			
-		    	<div class="span3">	
-		    		<!-- <div class="tabbable"> Only required for left/right tabs -->
-				  		<div class="tab-content">
-				     			<!-- <div class="well">
+        <section id="typography">
+            <div class="sidebar">
+                <ul>
+                    <li>
+                        <a href="#" id="text-link">
+                            <i class="fa-solid fa-t"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="about.html">
+                            <i class="fa-solid fa-image"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="services.html">
+                            <i class="fa-solid fa-fill-drip"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html">
+                            <i class="fa-solid fa-message"></i>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <nav>
+                <div class="logo-container">
+                    <img src="/old/img/H-logo.png" alt="Logo" class="logo">
+                    <div class="page-head">
+                        <h3 style="color: #000000;">Customize Your Product</h3>
+                    </div>
+                </div>
+                <button id="signup" class="signup" title="Sign up"
+                    onclick="window.open('https://www.hattyhood.com/register', '_blank')">Sign Up</button>
+                <!-- <button id="imgsavepdf" class="save-btn" title="Save">Save</button> -->
+            </nav>
+
+            <!-- Headings & Paragraph Copy -->
+            <div class="row">
+                <div class="span3">
+                    <!-- <div class="tabbable"> Only required for left/right tabs -->
+                    <div class="tab-content">
+                        <!-- <div class="well">
 					      			<p style="font-family: 'Telex',sans-serif;font-weight: bold;line-height: 1;color: #317eac;text-rendering: optimizelegibility;">Tshirt Style</p>
 										<select id="tshirttype">                        
 											<option value="img/crew_front.png" selected="selected">Short Sleeve Shirts</option>
@@ -112,318 +96,352 @@
 										</select>	
 						      		</p>								
 					      		</div> -->
-								<div class="well">
-									<p style="font-family: 'Telex',sans-serif;font-weight: bold;line-height: 1;color: #10111E;text-rendering: optimizelegibility; font-size: 17px;">Action</p>
-									<div class="button-container">
-									<!-- <button id="imgsavepdf" class="action-buttons" title="Save"><i
+                        <div class="well">
+                            <p
+                                style="font-family: 'Telex',sans-serif;font-weight: bold;line-height: 1;color: #10111E;text-rendering: optimizelegibility; font-size: 17px;">
+                                Action</p>
+                            <div class="button-container">
+                                <!-- <button id="imgsavepdf" class="action-buttons" title="Save"><i
                                     style="font-size: 25px;"
                                     class="fa fa-file-pdf-o"
                                     aria-hidden="true"></i></button> -->
-									<button id="rotate" title="Rotate" class="action-buttons"><i
-									style="font-size: 25px;"
-									class="fa fa-repeat"
-									aria-hidden="true"></i></button>
-									<button class="action-buttons" onclick="location.reload();" title="Clear All"><i
-									style="font-size: 25px;"
-									class="fa fa-trash"
-									aria-hidden="true"></i></button>
-									</div>
-								</div>
-								<div class="well">
-									<p style="font-family: 'Telex',sans-serif;font-weight: bold;line-height: 1;color: #10111E;text-rendering: optimizelegibility; font-size: 17px;">
-									Choose a color</p>
-									<ul class="nav">
-										<li id="colorListItem" class="color-preview" title="Select a colour">
-											<input type="color" class="favcolor" id="favcolor" name="favcolor" value="#ffffff"><br>
-										</li>
-									</ul>
-								</div>
-								<div class="option-box" id="text-div" style="display: none;">
-									<p style="font-family: 'Telex', sans-serif; font-weight: bold; line-height: 1; color: #10111E; text-rendering: optimizelegibility; font-size: 17px;">
-										Add a Text
-									</p>
-									<div class="c-formContainer">
-										<div class="c-formBox">
-										<div class="c-form">
-											<input class="c-form__input" id="text-string" placeholder="Add your Text" type="text" style="align-items: center;">
-											<button class="c-form__button" id="add-text" type="button">OK</button>
-										</div>
-										</div>
-									</div>
-								</div>
-								<div class="well">
-									<p style="font-family: 'Telex',sans-serif;font-weight: bold;line-height: 1;color: #10111E;text-rendering: optimizelegibility; font-size: 17px;">
-									Add an Image</p>
-										<div id="avatarlist">
-											<img style="cursor:pointer;" class="img-polaroid" src="img/invisibleman.jpg">
-										</div>	
-										<input class="choosefile" type="file" id="avatarfile" accept="image/*">
-								</div>			      			      
-				     	</div>				   
-				  	<!-- </div> -->
-				</div>						
-		    	<div class="span6">		    
-		    		<div align="center" style="min-height: 32px;">
-		    			<div class="clearfix">
-							<div class="btn-group inline pull-left" id="texteditor" style="display:none">						  
-								<button id="font-family" class="btn dropdown-toggle" data-toggle="dropdown" title="Font Style"><i class="icon-font" style="width:19px;height:19px;"></i></button>		                      
-							    <ul class="dropdown-menu" role="menu" aria-labelledby="font-family-X">
-								    <li><a tabindex="-1" href="#" onclick="setFont('Arial');" class="Arial">Arial</a></li>
-								    <li><a tabindex="-1" href="#" onclick="setFont('Helvetica');" class="Helvetica">Helvetica</a></li>
-								    <li><a tabindex="-1" href="#" onclick="setFont('Myriad Pro');" class="MyriadPro">Myriad Pro</a></li>
-								    <li><a tabindex="-1" href="#" onclick="setFont('Delicious');" class="Delicious">Delicious</a></li>
-								    <li><a tabindex="-1" href="#" onclick="setFont('Verdana');" class="Verdana">Verdana</a></li>
-								    <li><a tabindex="-1" href="#" onclick="setFont('Georgia');" class="Georgia">Georgia</a></li>
-								    <li><a tabindex="-1" href="#" onclick="setFont('Courier');" class="Courier">Courier</a></li>
-								    <li><a tabindex="-1" href="#" onclick="setFont('Comic Sans MS');" class="ComicSansMS">Comic Sans MS</a></li>
-								    <li><a tabindex="-1" href="#" onclick="setFont('Impact');" class="Impact">Impact</a></li>
-								    <li><a tabindex="-1" href="#" onclick="setFont('Monaco');" class="Monaco">Monaco</a></li>
-								    <li><a tabindex="-1" href="#" onclick="setFont('Optima');" class="Optima">Optima</a></li>
-								    <li><a tabindex="-1" href="#" onclick="setFont('Hoefler Text');" class="Hoefler Text">Hoefler Text</a></li>
-								    <li><a tabindex="-1" href="#" onclick="setFont('Plaster');" class="Plaster">Plaster</a></li>
-								    <li><a tabindex="-1" href="#" onclick="setFont('Engagement');" class="Engagement">Engagement</a></li>
-				                </ul>
-							    <button id="text-bold" class="btn" data-original-title="Bold"><img src="img/font_bold.png" height="" width=""></button>
-							    <button id="text-italic" class="btn" data-original-title="Italic"><img src="img/font_italic.png" height="" width=""></button>
-							    <button id="text-strike" class="btn" title="Strike" style=""><img src="img/font_strikethrough.png" height="" width=""></button>
-							 	<button id="text-underline" class="btn" title="Underline" style=""><img src="img/font_underline.png"></button>
-							 	<a class="btn" href="#" rel="tooltip" data-placement="top" data-original-title="Font Color"><input type="hidden" id="text-fontcolor" class="color-picker" size="7" value="#000000"></a>
-						 		<a class="btn" href="#" rel="tooltip" data-placement="top" data-original-title="Font Border Color"><input type="hidden" id="text-strokecolor" class="color-picker" size="7" value="#000000"></a>
-								  <!--- Background <input type="hidden" id="text-bgcolor" class="color-picker" size="7" value="#ffffff"> --->
-							</div>							  
-							<div class="pull-right" align="" id="imageeditor" style="display:none">
+                                <button id="rotate" title="Rotate" class="action-buttons"><i style="font-size: 25px;"
+                                        class="fa fa-repeat" aria-hidden="true"></i></button>
+                                <button class="action-buttons" onclick="location.reload();" title="Clear All"><i
+                                        style="font-size: 25px;" class="fa fa-trash" aria-hidden="true"></i></button>
+                            </div>
+                        </div>
+                        <div class="well">
+                            <p
+                                style="font-family: 'Telex',sans-serif;font-weight: bold;line-height: 1;color: #10111E;text-rendering: optimizelegibility; font-size: 17px;">
+                                Choose a color</p>
+                            <ul class="nav">
+                                <li id="colorListItem" class="color-preview" title="Select a colour">
+                                    <input type="color" class="favcolor" id="favcolor" name="favcolor"
+                                        value="#ffffff"><br>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="option-box" id="text-div" style="display: none;">
+                            <p
+                                style="font-family: 'Telex', sans-serif; font-weight: bold; line-height: 1; color: #10111E; text-rendering: optimizelegibility; font-size: 17px;">
+                                Add a Text
+                            </p>
+                            <div class="c-formContainer">
+                                <div class="c-formBox">
+                                    <div class="c-form">
+                                        <input class="c-form__input" id="text-string" placeholder="Add your Text"
+                                            type="text" style="align-items: center;">
+                                        <button class="c-form__button" id="add-text" type="button">OK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="well">
+                            <p
+                                style="font-family: 'Telex',sans-serif;font-weight: bold;line-height: 1;color: #10111E;text-rendering: optimizelegibility; font-size: 17px;">
+                                Add an Image</p>
+                            <div id="avatarlist">
+                                <img style="cursor:pointer;" class="img-polaroid" src="img/invisibleman.jpg">
+                            </div>
+                            <input class="choosefile" type="file" id="avatarfile" accept="image/*">
+                        </div>
+                    </div>
+                    <!-- </div> -->
+                </div>
+                <div class="span6">
+                    <div align="center" style="min-height: 32px;">
+                        <div class="clearfix">
+                            <div class="btn-group inline pull-left" id="texteditor" style="display:none">
+                                <button id="font-family" class="btn dropdown-toggle" data-toggle="dropdown"
+                                    title="Font Style"><i class="icon-font"
+                                        style="width:19px;height:19px;"></i></button>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="font-family-X">
+                                    <li><a tabindex="-1" href="#" onclick="setFont('Arial');" class="Arial">Arial</a>
+                                    </li>
+                                    <li><a tabindex="-1" href="#" onclick="setFont('Helvetica');"
+                                            class="Helvetica">Helvetica</a></li>
+                                    <li><a tabindex="-1" href="#" onclick="setFont('Myriad Pro');"
+                                            class="MyriadPro">Myriad Pro</a></li>
+                                    <li><a tabindex="-1" href="#" onclick="setFont('Delicious');"
+                                            class="Delicious">Delicious</a></li>
+                                    <li><a tabindex="-1" href="#" onclick="setFont('Verdana');"
+                                            class="Verdana">Verdana</a></li>
+                                    <li><a tabindex="-1" href="#" onclick="setFont('Georgia');"
+                                            class="Georgia">Georgia</a></li>
+                                    <li><a tabindex="-1" href="#" onclick="setFont('Courier');"
+                                            class="Courier">Courier</a></li>
+                                    <li><a tabindex="-1" href="#" onclick="setFont('Comic Sans MS');"
+                                            class="ComicSansMS">Comic Sans MS</a></li>
+                                    <li><a tabindex="-1" href="#" onclick="setFont('Impact');" class="Impact">Impact</a>
+                                    </li>
+                                    <li><a tabindex="-1" href="#" onclick="setFont('Monaco');" class="Monaco">Monaco</a>
+                                    </li>
+                                    <li><a tabindex="-1" href="#" onclick="setFont('Optima');" class="Optima">Optima</a>
+                                    </li>
+                                    <li><a tabindex="-1" href="#" onclick="setFont('Hoefler Text');"
+                                            class="Hoefler Text">Hoefler Text</a></li>
+                                    <li><a tabindex="-1" href="#" onclick="setFont('Plaster');"
+                                            class="Plaster">Plaster</a></li>
+                                    <li><a tabindex="-1" href="#" onclick="setFont('Engagement');"
+                                            class="Engagement">Engagement</a></li>
+                                </ul>
+                                <button id="text-bold" class="btn" data-original-title="Bold"><img
+                                        src="img/font_bold.png" height="" width=""></button>
+                                <button id="text-italic" class="btn" data-original-title="Italic"><img
+                                        src="img/font_italic.png" height="" width=""></button>
+                                <button id="text-strike" class="btn" title="Strike" style=""><img
+                                        src="img/font_strikethrough.png" height="" width=""></button>
+                                <button id="text-underline" class="btn" title="Underline" style=""><img
+                                        src="img/font_underline.png"></button>
+                                <a class="btn" href="#" rel="tooltip" data-placement="top"
+                                    data-original-title="Font Color"><input type="hidden" id="text-fontcolor"
+                                        class="color-picker" size="7" value="#000000"></a>
+                                <a class="btn" href="#" rel="tooltip" data-placement="top"
+                                    data-original-title="Font Border Color"><input type="hidden" id="text-strokecolor"
+                                        class="color-picker" size="7" value="#000000"></a>
+                                <!--- Background <input type="hidden" id="text-bgcolor" class="color-picker" size="7" value="#ffffff"> --->
+                            </div>
+                            <div class="pull-right" align="" id="imageeditor" style="display:none">
                                 <div class="btn-group">
-									<button class="btn" id="bring-to-front" title="Bring to Front"><i
-										class="icon-fast-backward rotate" style="height:19px;"></i></button>
-									<button class="btn" id="send-to-back" title="Send to Back"><i
-										class="icon-fast-forward rotate" style="height:19px;"></i></button>
-									<button id="flip" type="button" class="btn" title="Show Back View"><i
-										class="icon-retweet" style="height:19px;"></i></button>
-									<button id="remove-selected" class="btn" title="Delete selected item"><i
-										class="icon-trash" style="height:19px;"></i></button>
-                            	</div>
-                    		</div>
-						</div>												
-					</div>								  		
-					<!--	EDITOR      -->	
-						<div id="shirtDiv" class="page" style="width: 530px; height: 630px; position: relative; background-color: rgb(255, 255, 255);">
-							<img name="tshirtview" id="tshirtFacing" src="img/crew_front.png">
-							<div id="drawingArea" style="position: absolute;top: 100px;left: 160px;z-index: 10;width: 200px;height: 400px;">					
-								<canvas id="tcanvas" width=200 height="400" class="hover" style="-webkit-user-select: none;"></canvas>
-							</div>
-						</div>
-					<!-- <div id="shirtBack" class="page" style="width: 530px; height: 630px; position: relative; background-color: rgb(255, 255, 255); display:none;">
+                                    <button class="btn" id="bring-to-front" title="Bring to Front"><i
+                                            class="icon-fast-backward rotate" style="height:19px;"></i></button>
+                                    <button class="btn" id="send-to-back" title="Send to Back"><i
+                                            class="icon-fast-forward rotate" style="height:19px;"></i></button>
+                                    <button id="flip" type="button" class="btn" title="Show Back View"><i
+                                            class="icon-retweet" style="height:19px;"></i></button>
+                                    <button id="remove-selected" class="btn" title="Delete selected item"><i
+                                            class="icon-trash" style="height:19px;"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--	EDITOR      -->
+                    <div id="shirtDiv" class="page"
+                        style="width: 530px; height: 630px; position: relative; background-color: rgb(255, 255, 255);">
+                        <img name="tshirtview" id="tshirtFacing" src="img/crew_front.png">
+                        <div id="drawingArea"
+                            style="position: absolute;top: 100px;left: 160px;z-index: 10;width: 200px;height: 400px;">
+                            <canvas id="tcanvas" width=200 height="400" class="hover"
+                                style="-webkit-user-select: none;"></canvas>
+                        </div>
+                    </div>
+                    <!-- <div id="shirtBack" class="page" style="width: 530px; height: 630px; position: relative; background-color: rgb(255, 255, 255); display:none;">
 						<img src="img/crew_back.png"></img>
 						<div id="drawingArea" style="position: absolute;top: 100px;left: 160px;z-index: 10;width: 200px;height: 400px;">					
 							<canvas id="backCanvas" width=200 height="400" class="hover" style="-webkit-user-select: none;"></canvas>
 						</div>
 					</div>						 -->
-								
-					<!-- /EDITOR		 -->
-		    	</div>
-		
-		    	<div class="span3">
-		      		<div class="well" style="height: 580px;">
-						<h3 id="sizeChartIcon" style="color: #000000;">Select Sizes  <i id="sizeChartIcon" class="icon-chevron-down" style="margin-top: 7px; "></i></h3>
-						<div id="sizeChartModal" class="modal" style="display: none;">
-							<div class="modal-content">
-								<!-- Size Chart Content -->
-								<span id="closeButton" class="close">&times;</span>
-								<img src="/old/img/size-chart.jpeg" alt="Size Chart" />
-							</div>
-						</div>
-						<div id="sizeChartModal">
-							<p>
-								<table class="table">
-									<tr>
-										<td>&emsp;XS</td>
-										<!-- <td align="right"><input min="0" style="width: 40px; margin-bottom: 30px;" value="0" type="number"></td> -->
-										<td align="right">
-											<div class="quantity-container">
-												<div class="quantity-input">
-													<button class="decrement">-</button>
-													<input class="quantity xs-input" min="0" value="0" type="number">
-													<button class="increment">+</button>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>&emsp;S</td>
-										<!-- <td align="right"><input min="0" style="width: 40px; margin-bottom: 30px;" value="0" type="number"></td> -->
-										<td align="right">
-											<div class="quantity-container">
-												<div class="quantity-input">
-													<button class="decrement">-</button>
-													<input class="quantity s-input" min="0" value="0" type="number">
-													<button class="increment">+</button>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>&emsp;M</td>
-										<!-- <td align="right"><input min="0" style="width: 40px; margin-bottom: 30px;" value="0" type="number"></td> -->
-										<td align="right">
-											<div class="quantity-container">
-												<div class="quantity-input">
-													<button class="decrement">-</button>
-													<input class="quantity m-input" min="0" value="0" type="number">
-													<button class="increment">+</button>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>&emsp;L</td>
-										<!-- <td align="right"><input min="0" style="width: 40px; margin-bottom: 30px;" value="0" type="number"></td> -->
-										<td align="right">
-											<div class="quantity-container">
-												<div class="quantity-input">
-													<button class="decrement">-</button>
-													<input class="quantity l-input" min="0" value="0" type="number">
-													<button class="increment">+</button>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>&emsp;XL</td>
-										<!-- <td align="right"><input min="0" style="width: 40px; margin-bottom: 30px;" value="0" type="number"></td> -->
-										<td align="right">
-											<div class="quantity-container">
-												<div class="quantity-input">
-													<button class="decrement">-</button>
-													<input class="quantity xl-input" min="0" value="0" type="number">
-													<button class="increment">+</button>
-												</div>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>&emsp;XXL</td>
-										<!-- <td align="right"><input min="0" style="width: 40px; margin-bottom: 30px;" value="0" type="number"></td> -->
-										<td align="right">
-											<div class="quantity-container">
-												<div class="quantity-input">
-													<button class="decrement">-</button>
-													<input class="quantity xxl-input" min="0" value="0" type="number">
-													<button class="increment">+</button>
-												</div>
-											</div>
-										</td>
-									</tr>
-								</table>			
-							</p>
-							<button type="button" class="place-order" name="addToTheBag" id="addToTheBag" style="width: calc(100% - 20px); margin: 0 10px;">Confirm Order<i class="icon-briefcase icon-white"></i></button>
-						</div>
-					</div>		      		       		   
-		    	</div>
-			</div> 
-		</section>
+
+                    <!-- /EDITOR		 -->
+                </div>
+
+                <div class="span3 sizeadd">
+                    <div class="well  " style="height: 580px;">
+                        <h3 id="sizeChartIcon" style="color: #000000;">Select Sizes <i id="sizeChartIcon"
+                                class="icon-chevron-down" style="margin-top: 7px; "></i></h3>
+                        <div id="sizeChartModal" class="modal" style="display: none;">
+                            <div class="modal-content">
+                                <!-- Size Chart Content -->
+                                <span id="closeButton" class="close">&times;</span>
+                                <img src="/old/img/size-chart.jpeg" alt="Size Chart" />
+                            </div>
+                        </div>
+                        <div id="sizeChartModal">
+                            <p>
+                            <table class="table">
+                                <tr>
+                                    <td>&emsp;XS</td>
+                                    <!-- <td align="right"><input min="0" style="width: 40px; margin-bottom: 30px;" value="0" type="number"></td> -->
+                                    <td align="right">
+                                        <div class="quantity-container">
+                                            <div class="quantity-input">
+                                                <button class="decrement">-</button>
+                                                <input class="quantity xs-input" min="0" value="0" type="number">
+                                                <button class="increment">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&emsp;S</td>
+                                    <!-- <td align="right"><input min="0" style="width: 40px; margin-bottom: 30px;" value="0" type="number"></td> -->
+                                    <td align="right">
+                                        <div class="quantity-container">
+                                            <div class="quantity-input">
+                                                <button class="decrement">-</button>
+                                                <input class="quantity s-input" min="0" value="0" type="number">
+                                                <button class="increment">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&emsp;M</td>
+                                    <!-- <td align="right"><input min="0" style="width: 40px; margin-bottom: 30px;" value="0" type="number"></td> -->
+                                    <td align="right">
+                                        <div class="quantity-container">
+                                            <div class="quantity-input">
+                                                <button class="decrement">-</button>
+                                                <input class="quantity m-input" min="0" value="0" type="number">
+                                                <button class="increment">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&emsp;L</td>
+                                    <!-- <td align="right"><input min="0" style="width: 40px; margin-bottom: 30px;" value="0" type="number"></td> -->
+                                    <td align="right">
+                                        <div class="quantity-container">
+                                            <div class="quantity-input">
+                                                <button class="decrement">-</button>
+                                                <input class="quantity l-input" min="0" value="0" type="number">
+                                                <button class="increment">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&emsp;XL</td>
+                                    <!-- <td align="right"><input min="0" style="width: 40px; margin-bottom: 30px;" value="0" type="number"></td> -->
+                                    <td align="right">
+                                        <div class="quantity-container">
+                                            <div class="quantity-input">
+                                                <button class="decrement">-</button>
+                                                <input class="quantity xl-input" min="0" value="0" type="number">
+                                                <button class="increment">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>&emsp;XXL</td>
+                                    <!-- <td align="right"><input min="0" style="width: 40px; margin-bottom: 30px;" value="0" type="number"></td> -->
+                                    <td align="right">
+                                        <div class="quantity-container">
+                                            <div class="quantity-input">
+                                                <button class="decrement">-</button>
+                                                <input class="quantity xxl-input" min="0" value="0" type="number">
+                                                <button class="increment">+</button>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                            </p>
+                            <button type="button" class="place-order" name="addToTheBag" id="addToTheBag"
+                                style="width: calc(100% - 20px); margin: 0 10px;">Confirm Order<i
+                                    class="icon-briefcase icon-white"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
     </div><!-- /container -->
 
 
- <!-- upload image script    -->
-<script>
-  // Get the avatar list element
-  const avatarList = document.getElementById('avatarlist');
-
-  // Get the file input element
-  const avatarFile = document.getElementById('avatarfile');
-
-  // Add event listener to file input element
-  avatarFile.addEventListener('change', function() {
-    // Check if a file is selected
-    if (avatarFile.files.length > 0) {
-      // Get the selected file
-      const file = avatarFile.files[0];
-
-      // Check if the file type is an image
-      if (file.type.startsWith('image/')) {
-        // Create an image element
-        const avatarImage = document.createElement('img');
-        avatarImage.className = 'img-polaroid';
-        avatarImage.style.cursor = 'pointer';
-
-        // Create a file reader to read the image data
-        const reader = new FileReader();
-        reader.addEventListener('load', function() {
-          // Create a new image element with the loaded data
-          const img = new Image();
-          img.addEventListener('load', function() {
-            // Check if the image dimensions are within the specified limits
-            if (img.width <= 500 && img.height <= 500) {
-              // Set the image source to the loaded data
-              avatarImage.src = reader.result;
-
-              // Append the image element to the avatar list
-              avatarList.appendChild(avatarImage);
-            } else {
-              alert('Please select an image with dimensions less than or equal to 500x500.');
-            }
-          });
-          img.src = reader.result;
-        });
-        reader.readAsDataURL(file);
-      } else {
-        alert('Please select an image file.');
-      }
-    }
-  });
-
-  // Get the Confirm Order button element
-const confirmOrderButton = document.getElementById("addToTheBag");
-
-// Add click event listener to the Confirm Order button
-confirmOrderButton.addEventListener("click", function() {
-  // Check if the sum of quantities is greater than zero
-  const quantities = document.querySelectorAll("#sizeChartModal input[type='number']");
-  let sum = 0;
-  quantities.forEach(function(quantityInput) {
-    sum += parseInt(quantityInput.value);
-  });
-
-  if (sum > 0 && hasSaved) {
-  // Proceed with the order
-  console.log("Order confirmed");
-} else {
-  // Display an error message using SweetAlert
-  swal("Error", "Unable to confirm order. Please check the quantities.", "error");
-}
-});
-
-</script>
-
-
-<!-- Footer ================================================== -->
+    <!-- upload image script    -->
     <script>
-        $(document).ready(function(){
-			$("#tshirttype").change(function(){
-				$("img[name=tshirtview]").attr("src",$(this).val());
+        // Get the avatar list element
+        const avatarList = document.getElementById('avatarlist');
 
-			});
+        // Get the file input element
+        const avatarFile = document.getElementById('avatarfile');
 
-		});
+        // Add event listener to file input element
+        avatarFile.addEventListener('change', function () {
+            // Check if a file is selected
+            if (avatarFile.files.length > 0) {
+                // Get the selected file
+                const file = avatarFile.files[0];
+
+                // Check if the file type is an image
+                if (file.type.startsWith('image/')) {
+                    // Create an image element
+                    const avatarImage = document.createElement('img');
+                    avatarImage.className = 'img-polaroid';
+                    avatarImage.style.cursor = 'pointer';
+
+                    // Create a file reader to read the image data
+                    const reader = new FileReader();
+                    reader.addEventListener('load', function () {
+                        // Create a new image element with the loaded data
+                        const img = new Image();
+                        img.addEventListener('load', function () {
+                            // Check if the image dimensions are within the specified limits
+                            if (img.width <= 500 && img.height <= 500) {
+                                // Set the image source to the loaded data
+                                avatarImage.src = reader.result;
+
+                                // Append the image element to the avatar list
+                                avatarList.appendChild(avatarImage);
+                            } else {
+                                alert('Please select an image with dimensions less than or equal to 500x500.');
+                            }
+                        });
+                        img.src = reader.result;
+                    });
+                    reader.readAsDataURL(file);
+                } else {
+                    alert('Please select an image file.');
+                }
+            }
+        });
+
+        // Get the Confirm Order button element
+        const confirmOrderButton = document.getElementById("addToTheBag");
+
+        // Add click event listener to the Confirm Order button
+        confirmOrderButton.addEventListener("click", function () {
+            // Check if the sum of quantities is greater than zero
+            const quantities = document.querySelectorAll("#sizeChartModal input[type='number']");
+            let sum = 0;
+            quantities.forEach(function (quantityInput) {
+                sum += parseInt(quantityInput.value);
+            });
+
+            if (sum > 0 && hasSaved) {
+                // Proceed with the order
+                console.log("Order confirmed");
+            } else {
+                // Display an error message using SweetAlert
+                swal("Error", "Unable to confirm order. Please check the quantities.", "error");
+            }
+        });
+
+    </script>
+
+
+    <!-- Footer ================================================== -->
+    <script>
+        $(document).ready(function () {
+            $("#tshirttype").change(function () {
+                $("img[name=tshirtview]").attr("src", $(this).val());
+
+            });
+
+        });
     </script>
     <!-- Le javascript
     ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster --> 
-    <script src="js/bootstrap.min.js"></script>  
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
-	<script type="text/javascript" src="../old/js/tshirtEditor.js"></script>
-	<script type="text/javascript" src="js/jquery.miniColors.min.js"></script>
-	<script src="js/script.js"></script>
-	<script src="js/api.js"></script>
-	<script src="js/upload.js"></script>
-<!-- for color to impart on shirt -->
-	<script>
-		var shirt = document.getElementById("tshirtFacing");
-		var colorPicker = document.getElementById("favcolor");
-		colorPicker.addEventListener("input", function() {
-			shirt.style.backgroundColor = colorPicker.value;
-		});
-	</script>
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+    <script type="text/javascript" src="../old/js/tshirtEditor.js"></script>
+    <script type="text/javascript" src="js/jquery.miniColors.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/upload.js"></script>
+    <!-- for color to impart on shirt -->
+    <script>
+        var shirt = document.getElementById("tshirtFacing");
+        var colorPicker = document.getElementById("favcolor");
+        colorPicker.addEventListener("input", function () {
+            shirt.style.backgroundColor = colorPicker.value;
+        });
+    </script>
 
-  </body>
+</body>
+
 </html>

@@ -343,7 +343,7 @@ const orderConfirmationButton = document.getElementById("addToTheBag");
 
 // Add an event listener to the button
 orderConfirmationButton.addEventListener("click", async () => {
-	
+
 var doc = new jsPDF();
 	doc.setFontSize(20);
 	    // Get the hex code of the text color
@@ -426,7 +426,7 @@ var doc = new jsPDF();
 					console.error('Error uploading PDF to S3:', err);
 				} else {
 					console.log('PDF uploaded successfully:', data.Location);
-                
+
 	
 					const xsQuantity = parseInt(document.querySelector(".xs-input").value);
 					const sQuantity = parseInt(document.querySelector(".s-input").value);
