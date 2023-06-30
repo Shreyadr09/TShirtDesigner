@@ -305,8 +305,8 @@ function generateUniqueFilename() {
   
   return uniqueFilename;
 }
-
-
+	  
+		  	  
 		  
 		  
 		  
@@ -338,12 +338,46 @@ decrementButtons.forEach((button, index) => {
   });
 });
 
+let emailid = '';
+//autorization code 
+const urlParams = new URLSearchParams(window.location.search);
+
+// Get the value of the 'cookies' parameter
+const receivedCookies = urlParams.get('cookies');
+
+if (receivedCookies) {
+  // Set the received cookies as cookies on the redirected website
+  document.cookie = receivedCookies;
+  console.log('Received cookies:', receivedCookies);
+
+  // Remove the 'cookies' parameter from the URL
+  urlParams.delete('cookies');
+  const newUrl = `${window.location.pathname}${urlParams.toString()}`;
+  window.history.replaceState({}, document.title, newUrl);
+
+  // Decode and store the email from the received cookies
+  const decodedCookies = decodeURIComponent(receivedCookies);
+  emailid = decodedCookies.match(/Email=([^;]+)/)[1];
+  console.log('Decoded email:', emailid);
+  
+} else {
+	console.log('No cookies received');
+	
+}
+
+		  
 // Get the "Confirm Order" button element
 const orderConfirmationButton = document.getElementById("addToTheBag");
 
 // Add an event listener to the button
 orderConfirmationButton.addEventListener("click", async () => {
 
+	if (emailid.trim() === '') {
+    // Redirect the user to 127.0.0.1:3000/register
+    window.location.href = "http://127.0.0.1:3000/register";
+	
+    return; // Stop further execution of the code
+  }
 var doc = new jsPDF();
 	doc.setFontSize(20);
 	    // Get the hex code of the text color
@@ -437,7 +471,7 @@ var doc = new jsPDF();
   
 					// Prepare the request payload
 					const payload = {
-						email: "dhawan@gmail.com",
+						email: emailid,
 						xs: xsQuantity,
 						s: sQuantity,
 						m: mQuantity,

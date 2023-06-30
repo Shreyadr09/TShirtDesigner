@@ -1,4 +1,3 @@
-
 //opening the text box 
 $(document).ready(function() {
     // Handle click event on the text link
