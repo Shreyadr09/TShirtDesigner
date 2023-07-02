@@ -553,7 +553,6 @@ if (!document.createElement('canvas').getContext) {
       // Bounding box calculation (need to minimize displayed area so that
       // filters don't waste time on unused pixels.
       var max = d;
-      var c2 = this.getCoords_(dx + dw, dy);
       var c3 = this.getCoords_(dx, dy + dh);
       var c4 = this.getCoords_(dx + dw, dy + dh);
 

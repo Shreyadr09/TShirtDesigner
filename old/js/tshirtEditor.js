@@ -274,7 +274,7 @@ var line4;
 	   
 	   $('.color-preview').click(function(){
 		   var color = $(this).css("background-color");
-		   document.getElementById("shirtDiv").style.backgroundColor = color;		   
+		//    document.getElementById("shirtDiv").style.backgroundColor = color;		   
 	   });
 		$('#rotate').click(function (e) {
     e.preventDefault();
@@ -544,10 +544,10 @@ $('#flip').click(function () {
 });
 		  
 	   $(".clearfix button,a").tooltip();
-	   line1 = new fabric.Line([0,0,400,0], {"stroke":"#000000", "strokeWidth":1,hasBorders:false,hasControls:false,hasRotatingPoint:false,selectable:false});
-	   line2 = new fabric.Line([199,0,200,399], {"stroke":"#000000", "strokeWidth":1,hasBorders:false,hasControls:false,hasRotatingPoint:false,selectable:false});
-	   line3 = new fabric.Line([0,0,0,400], {"stroke":"#000000", "strokeWidth":1,hasBorders:false,hasControls:false,hasRotatingPoint:false,selectable:false});
-	   line4 = new fabric.Line([0,400,200,399], {"stroke":"#000000", "strokeWidth":1,hasBorders:false,hasControls:false,hasRotatingPoint:false,selectable:false});
+	   line1 = new fabric.Line([0,0,180,0], {"stroke":"#000000", "strokeWidth":1,hasBorders:false,hasControls:false,hasRotatingPoint:false,selectable:false});
+	   line2 = new fabric.Line([179,0,180,320], {"stroke":"#000000", "strokeWidth":1,hasBorders:false,hasControls:false,hasRotatingPoint:false,selectable:false});
+	   line3 = new fabric.Line([0,0,0,320], {"stroke":"#000000", "strokeWidth":1,hasBorders:false,hasControls:false,hasRotatingPoint:false,selectable:false});
+	   line4 = new fabric.Line([0,320,180,319], {"stroke":"#000000", "strokeWidth":1,hasBorders:false,hasControls:false,hasRotatingPoint:false,selectable:false});
 	 });//doc ready
 	 
 	 
@@ -593,10 +593,26 @@ $('#flip').click(function () {
 		  }	        
 }
 
-document.getElementById("sizeChartIcon").addEventListener("click", function() {
-  document.getElementById("sizeChartModal").style.display = "block";
+  
+document.getElementById("sizeChartIcon").addEventListener("click", function () {
+	var sizeChartModal = document.getElementById("sizeChartModal");
+	var sizeTable = document.getElementById("table");
+	var bag = document.getElementById("addToTheBag");
+	var arrow = document.getElementById("sizeChartIconArrow");
+
+	if (sizeChartModal.style.display === "none") {
+    sizeChartModal.style.display = "block";
+    sizeTable.style.visibility = "hidden";
+	bag.style.visibility="hidden"
+	arrow.classList.remove('fa-chevron-down');
+    arrow.classList.add('fa-chevron-up');
+  	} else {
+    sizeChartModal.style.display = "none";
+    sizeTable.style.visibility = "visible";
+	bag.style.visibility="visible"
+	arrow.classList.remove('fa-chevron-up');
+    arrow.classList.add('fa-chevron-down');
+	}
+	
 });
 
-document.getElementById("closeButton").addEventListener("click", function() {
-  document.getElementById("sizeChartModal").style.display = "none";
-});
