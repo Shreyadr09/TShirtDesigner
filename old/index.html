@@ -15,13 +15,16 @@
     <!--[if IE]><script type="text/javascript" src="js/excanvas.js"></script><![endif]-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
     <script type="text/javascript" src="js/fabric.js"></script>
-    <script type="text/javascript" src="js/options.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1022.0.min.js"></script>
+
+
+      <script src="https://cdn.jsdelivr.net/npm/js-cookie@3.0.1/dist/js.cookie.min.js"></script>
+
     <!-- Le styles -->
     <link type="text/css" rel="stylesheet" href="css/jquery.miniColors.css" />
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -31,9 +34,18 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto Mono:wght@500&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto Mono:wght@500&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap"
+    />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -50,65 +62,47 @@
             <div class="container">
                 <div class="sidebar">
                     <ul>
-                        <li onclick="opensidebaronText()">
+                        <li>
                             <a id="text-link" class="textbox">
                                 <i class="fa-solid fa-t"></i>
                             </a>
                         </li>
                         <li>
-                            <a id="imageupload">
+                            <a href="about.html">
                                 <i class="fa-solid fa-image"></i>
                             </a>
                         </li>
                         <li>
-                            <a id="colorchange">
+                            <a href="services.html">
                                 <i class="fa-solid fa-fill-drip"></i>
                             </a>
                         </li>
                     </ul>
                 </div>
-                <div class="sidebartwo" id="textsidebar">
-                    <!-- <div class="option-box" id="text-div" style="display: none;">
-                        <p
-                            style="font-family: 'Telex', sans-serif; font-weight: bold; line-height: 1; color: #10111E; text-rendering: optimizelegibility; font-size: 17px;">
-                            Add a Text
-                        </p>
-                        <div class="c-formContainer">
-                            <div class="c-formBox">
-                                <div class="c-form">
-                                    <input class="c-form__input" id="text-string" placeholder="Add your Text" type="text"
-                                        style="align-items: center;">
-                                    <button class="c-form__button" id="add-text" type="button">OK</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-
-                Hi
-            </div>
-            <!-- <div class="sidebartwo" id="secondsidebar">
-
-            </div>
-            <div class="sidebartwo" id="secondsidebar">
-
-            </div> -->
             <nav>
                 <div class="header-container">
-                    <div class="logo-container">
-                        <img src="/old/img/hattyhood.png" alt="Logo" class="logo">
-                    </div>
-                    <div class="text-container">
-                        <div class="page-head">
-                            CUSTOMISATION
+                <div class="logo-container">
+                    <img src="/old/img/hattyhood.png" alt="Logo" class="logo">
+                </div> 
+                <div class="text-container">
+                    <div class="page-head">
+                        CUSTOMISATION
+                    </div> 
+                </div>
+                <div class="right-icons">
+                        <div id="ellipse-div" class="ellipse-div">
+                            <a href="http://127.0.0.1:3000/register" target="_blank">
+                            <i id="userIcon" class="fa-solid fa-user" style="color: #fe4536;"></i>
+                        </a>
+                        <span id="emailText" style="display: none;"></span>
+                        </div>     
+                        <div class="ellipse-div">
+                            <a href="tel:+91 9091013207">
+                                <i class="fa-solid fa-phone" style="color: #fe4536;"></i>
+                            </a>
                         </div>
-                    </div>
-                    <div class="right-icons">
-
-                        <div class="ellipse-div"><i class="fa-solid fa-phone" style="color: #fe4536;"></i></div>
-                        <div class="ellipse-div"><i class="fa-solid fa-user" style="color: #fe4536;"></i></div>
-
-                    </div>
-
+                </div>
+        
             </nav>
 
             <!-- Headings & Paragraph Copy -->
@@ -136,8 +130,8 @@
                                     style="font-size: 25px;"
                                     class="fa fa-file-pdf-o"
                                     aria-hidden="true"></i></button> -->
-                                <!-- <button id="rotate" title="Rotate" class="action-buttons"><i style="font-size: 25px;"
-                                        class="fa fa-repeat" aria-hidden="true"></i></button> -->
+                                <button id="rotate" title="Rotate" class="action-buttons"><i style="font-size: 25px;"
+                                        class="fa fa-repeat" aria-hidden="true"></i></button>
                                 <button class="action-buttons" onclick="location.reload();" title="Clear All"><i
                                         style="font-size: 25px;" class="fa fa-trash" aria-hidden="true"></i></button>
                             </div>
@@ -153,7 +147,21 @@
                                 </li>
                             </ul>
                         </div>
-
+                        <div class="option-box" id="text-div" style="display: none;">
+                            <p
+                                style="font-family: 'Telex', sans-serif; font-weight: bold; line-height: 1; color: #10111E; text-rendering: optimizelegibility; font-size: 17px;">
+                                Add a Text
+                            </p>
+                            <div class="c-formContainer">
+                                <div class="c-formBox">
+                                    <div class="c-form">
+                                        <input class="c-form__input" id="text-string" placeholder="Add your Text"
+                                            type="text" style="align-items: center;">
+                                        <button class="c-form__button" id="add-text" type="button">OK</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="well">
                             <p
                                 style="font-family: 'Telex',sans-serif;font-weight: bold;line-height: 1;color: #10111E;text-rendering: optimizelegibility; font-size: 17px;">
@@ -418,7 +426,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
     <script type="text/javascript" src="../old/js/tshirtEditor.js"></script>
     <script type="text/javascript" src="js/jquery.miniColors.min.js"></script>
-    <script src="js/script.js"></script>
+    <script type="module" src="js/script.js"></script>
     <script src="js/api.js"></script>
     <script src="js/upload.js"></script>
     <!-- for color to impart on shirt -->

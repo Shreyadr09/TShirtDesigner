@@ -12,6 +12,9 @@ var line1;
 var line2;
 var line3;
 var line4;
+
+
+
  	$(document).ready(function() {
 		//setup front side canvas 
  		canvas = new fabric.Canvas('tcanvas', {
@@ -338,41 +341,69 @@ decrementButtons.forEach((button, index) => {
   });
 });
 
-let emailid = '';
-//autorization code 
-const urlParams = new URLSearchParams(window.location.search);
-
-// Get the value of the 'cookies' parameter
-const receivedCookies = urlParams.get('cookies');
-
-if (receivedCookies) {
-  // Set the received cookies as cookies on the redirected website
-  document.cookie = receivedCookies;
-  console.log('Received cookies:', receivedCookies);
-
-  // Remove the 'cookies' parameter from the URL
-  urlParams.delete('cookies');
-  const newUrl = `${window.location.pathname}${urlParams.toString()}`;
-  window.history.replaceState({}, document.title, newUrl);
-
-  // Decode and store the email from the received cookies
-  const decodedCookies = decodeURIComponent(receivedCookies);
-  emailid = decodedCookies.match(/Email=([^;]+)/)[1];
-  console.log('Decoded email:', emailid);
+// console.log(document.cookie.split(';'));
+// // Get the value of the 'cookies' parameter
+                  
+// const receivedCookies = urlParams.get('cookies');
+// // let emailid = '';
+// const cookies = document.cookie.split(';');
+// for (let i = 0; i < cookies.length; i++) {
+// if (receivedCookies) {
+//   // Set the received cookies as cookies on the redirected website
+//   const cookie = cookies[i].trim();
+//   document.cookie = receivedCookies;
+//   console.log('Received cookies:', receivedCookies);
+//   // Check if the cookie starts with "Email="
+//   // Remove the 'cookies' parameter from the URL
+//   if (cookie.startsWith('Email=')) {
+//   urlParams.delete('cookies');
+//     // Extract the email value
+//   const newUrl = `${window.location.pathname}${urlParams.toString()}`;
+//     emailid = cookie.substring(6);
+//   window.history.replaceState({}, document.title, newUrl);
+//     break;
+//   }
+// }
+// if (emailid) {
+//          // Decode and store the email from the received cookies
+//   // Decode and store the email from the received cookies
+//   const decodedCookies = decodeURIComponent(receivedCookies);
+//    emailid = decodeURIComponent(emailid);
+//   emailid = decodedCookies.match(/Email=([^;]+)/)[1];
+//   console.log('Decoded email:', emailid);
+//   console.log('Decoded email:', emailid);
+//   console.log('Email:', emailid);
   
-} else {
-	console.log('No cookies received');
-	
-}
+// } else {
+//   console.log('Email not found in cookies');     
+// }
 
-		  
+let nocookie = 0;	  
 // Get the "Confirm Order" button element
 const orderConfirmationButton = document.getElementById("addToTheBag");
 
 // Add an event listener to the button
 orderConfirmationButton.addEventListener("click", async () => {
+	
+  var cookieValue = Cookies.get('Authorization');
+  let emailid = Cookies.get('Email')
+  if (cookieValue) {
+    console.log("Cookie value: " + cookieValue);
+    console.log("Email: " + emailid);
+	document.getElementById('userIcon').style.display = 'none';
+    document.getElementById('emailText').innerText = emailid;
+    document.getElementById('emailText').style.display = 'block';
+    document.getElementById('emailText').style.fontSize = '15px';
+    document.getElementById('emailText').style.fontWeight = 'bold';
+    document.getElementById('emailText').style.marginRight = '140px';
+    document.getElementById('ellipse-div').style.backgroundColor = 'transparent';
+  } else {
+    console.log("Cookie not found");
+	nocookie = nocookie + 1;
+  }
 
-	if (emailid.trim() === '') {
+
+	if (nocookie === 1) {
     // Redirect the user to 127.0.0.1:3000/register
     window.location.href = "http://127.0.0.1:3000/register";
 	
@@ -396,7 +427,7 @@ var doc = new jsPDF();
     function convertCanvasToImage(c, doc) {
       var image = new Image();
       image.src = c.toDataURL("image/jpeg");
-      doc.addImage(image.src, 'JPEG', 30, 5, 145, 145);
+      doc.addImage(image.src, 'JPEG', 30, 5, 145, 125);
       return image;
     }
     convertCanvasToImage(canvas, doc);
@@ -415,7 +446,7 @@ var doc = new jsPDF();
             function convertCanvasToImage(c) {
               var image = new Image();
               image.src = c.toDataURL("image/jpeg");
-              doc.addImage(image.src, 'JPEG', 30, 150, 145, 145);
+              doc.addImage(image.src, 'JPEG', 30, 150, 145, 125);
               return image;
             }
 

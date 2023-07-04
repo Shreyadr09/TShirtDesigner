@@ -12,10 +12,9 @@ body {
     padding-top: 60px;
     overflow-x: hidden;
 }
-
 /* navbar styling*/
 nav {
-    background-color: #FFF;
+    background-color:#FFF;
     height: 84px;
     position: fixed;
     top: 0;
@@ -33,66 +32,100 @@ nav {
     display: flex;
     align-items: center;
 }
-
-.logo-container img {
+.logo-container img{
     width: 200px;
     height: 30.81px;
     flex-shrink: 0;
 }
 
-.header-container {
+.header-container
+{
     width: 100%;
-    display: grid;
+    display:grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.text-container {
+.text-container
+{
     display: flex;
-    align-items: center;
-    justify-content: center;
+  	align-items: center;
+  	justify-content: center;
 }
 
 
 .page-head {
-    font-size: 24px;
-    text-transform: uppercase;
-
-    font-weight: 500;
-    font-family: Rubik;
-    color: #10111e;
-    text-align: center;
-
-    width: 203px;
-    height: 17px;
+  	font-size: 24px;
+  	text-transform: uppercase;
+  	font-weight: 500;
+  	font-family: Rubik;
+  	color: #10111e;
+  	text-align: center;
+ 
+  	width: 203px;
+  	height: 17px;
 }
 
-.right-icons {
+.right-icons
+{
     display: flex;
-    justify-content: flex-end;
+    justify-content:flex-end ;
 
 }
 
+/* .ellipse-div {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #fff1f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+*/
 .ellipse-div {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    margin-right: 10px;
-    border-radius: 50%;
-    background-color: #fff1f0;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: #fff1f0;
+    margin-right: 10px; /* Adjust the margin value as needed */
+  }
+
+  .ellipse-div:last-child {
+    margin-right: 0; /* Remove the margin on the last circle */
+  }
+
+  .ellipse-div a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* If the phone icon has a specific font size that you need to adjust */
+  .ellipse-div a i {
+    font-size: 20px; /* Adjust the size as needed */
+  }
+  .fa-phone {
+  font-size: 20px;
+  margin-left: 13px;
+  margin-bottom: 8px;
+} 
+.fa-user{
+  margin-left: 14px;
+  margin-bottom: 8px;
 }
 
-.fa-phone,
-.fa-user {
-    font-size: 20px;
-    margin-left: 10.5px;
-    margin-bottom: 8px;
+.ellipse-div a span {
+    font-size: 29px; 
 }
-
-
-
 
 /* right bar styling */
 .sizeadd {
@@ -111,35 +144,7 @@ nav {
 }
 
 .size-chart {
-  position: relative;
-font-size: 28px;
-line-height: 14px;
-text-transform: uppercase;
-font-weight: 600;
-font-family: Rubik;
-color: #000;
-text-align: center;
-margin-top: 100px;
-}
-
-/* right bar styling */
-.sizeadd {
-  position: fixed;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  background-color: #e1e1e1;
-}
-
-.size-box {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.size-chart {
-  position: relative;
+position: relative;
 font-size: 28px;
 line-height: 14px;
 text-transform: uppercase;
@@ -467,20 +472,9 @@ margin-top: 100px;
   width: 46.49px;
   height: 21.38px;
   margin-top: 10px;
-  display: inline-block;
-  background-color: #fff;
-  border-radius: 3px;
-  width: 46.49px;
-  height: 21.38px;
-  margin-top: 10px;
 }
 
 .quantity-input {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  border-radius: 3px;
-  margin: 0 -22px 0 -22px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -499,21 +493,9 @@ margin-top: 100px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   color: #10111e;
-  width: 18.6px;
-  height: 21.38px;
-  font-size: 16px;
-  border-radius: 3px;
-  font-weight: 500;
-  border: none;
-  background-color: #fff;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  color: #10111e;
 }
 
 .quantity-input button:hover {
-  background-color: #d23323;
-  color: #fff;
   background-color: #d23323;
   color: #fff;
 }
@@ -528,17 +510,7 @@ margin-top: 100px;
   background-color: transparent;
   box-shadow: none;
   padding: 0;
-  flex: 1;
-  height: 100%;
-  text-align: center;
-  font-size: 16px;
-  border: none;
-  border-radius: 0;
-  background-color: transparent;
-  box-shadow: none;
-  padding: 0;
 }
-
 
 
 .quantity-input input[type="number"]::-webkit-inner-spin-button,
@@ -569,24 +541,6 @@ font-family: Rubik;
 color: #fff;
 text-align: center;
 }
-
-.place-order{
-    position: relative;
-border-radius: 43px;
-background-color: #fe4536;
-width: 200px;
-height: 36px;
-left: 35px;
-}
-.place-order p{
-    position: relative;
-font-size: 18px;
-line-height: 14px;
-font-weight: 500;
-font-family: Rubik;
-color: #fff;
-text-align: center;
-}
 .sidebar {
     position: fixed;
     top: 0;
@@ -597,49 +551,14 @@ text-align: center;
     align-items: center;
     background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
     width: 70px;
-    /* overflow: hidden; */
+    overflow: hidden;
     transition: width 0.2s linear;
     background: #10111e;
     box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-}
 
-#textsidebar {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    visibility: hidden;
-    width: 340px;
-    top: 0;
-    bottom: 0;
-    left: 70px;
-    z-index: -1;
-    height: 100vh;
-    margin-left: 0;
-    background-color: green;
 }
 
 
-
-.myElementin {
-    animation: myAnimation 0.25s ease-in;
-}
-
-
-
-@keyframes myAnimation {
-    0% {
-        opacity: 0;
-    }
-
-    50% {
-        opacity: .5;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
 
 .sidebar .logo img {
     width: 60px;
@@ -706,3 +625,6 @@ text-align: center;
     margin-left: 25px;
 }
 
+.rotate {
+  transform: rotate(180deg);
+}
