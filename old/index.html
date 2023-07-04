@@ -20,6 +20,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1022.0.min.js"></script>
 
 
@@ -382,27 +384,6 @@
                 } else {
                     alert('Please select an image file.');
                 }
-            }
-        });
-
-        // Get the Confirm Order button element
-        const confirmOrderButton = document.getElementById("addToTheBag");
-
-        // Add click event listener to the Confirm Order button
-        confirmOrderButton.addEventListener("click", function () {
-            // Check if the sum of quantities is greater than zero
-            const quantities = document.querySelectorAll("#sizeChartModal input[type='number']");
-            let sum = 0;
-            quantities.forEach(function (quantityInput) {
-                sum += parseInt(quantityInput.value);
-            });
-
-            if (sum > 0 && hasSaved) {
-                // Proceed with the order
-                console.log("Order confirmed");
-            } else {
-                // Display an error message using SweetAlert
-                swal("Error", "Unable to confirm order. Please check the quantities.", "error");
             }
         });
 

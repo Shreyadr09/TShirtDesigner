@@ -340,45 +340,7 @@ decrementButtons.forEach((button, index) => {
     }
   });
 });
-
-// console.log(document.cookie.split(';'));
-// // Get the value of the 'cookies' parameter
-                  
-// const receivedCookies = urlParams.get('cookies');
-// // let emailid = '';
-// const cookies = document.cookie.split(';');
-// for (let i = 0; i < cookies.length; i++) {
-// if (receivedCookies) {
-//   // Set the received cookies as cookies on the redirected website
-//   const cookie = cookies[i].trim();
-//   document.cookie = receivedCookies;
-//   console.log('Received cookies:', receivedCookies);
-//   // Check if the cookie starts with "Email="
-//   // Remove the 'cookies' parameter from the URL
-//   if (cookie.startsWith('Email=')) {
-//   urlParams.delete('cookies');
-//     // Extract the email value
-//   const newUrl = `${window.location.pathname}${urlParams.toString()}`;
-//     emailid = cookie.substring(6);
-//   window.history.replaceState({}, document.title, newUrl);
-//     break;
-//   }
-// }
-// if (emailid) {
-//          // Decode and store the email from the received cookies
-//   // Decode and store the email from the received cookies
-//   const decodedCookies = decodeURIComponent(receivedCookies);
-//    emailid = decodeURIComponent(emailid);
-//   emailid = decodedCookies.match(/Email=([^;]+)/)[1];
-//   console.log('Decoded email:', emailid);
-//   console.log('Decoded email:', emailid);
-//   console.log('Email:', emailid);
-  
-// } else {
-//   console.log('Email not found in cookies');     
-// }
-
-let nocookie = 0;	  
+	  
 // Get the "Confirm Order" button element
 const orderConfirmationButton = document.getElementById("addToTheBag");
 
@@ -387,6 +349,7 @@ orderConfirmationButton.addEventListener("click", async () => {
 	
   var cookieValue = Cookies.get('Authorization');
   let emailid = Cookies.get('Email')
+  var nocookie = 0;
   if (cookieValue) {
     console.log("Cookie value: " + cookieValue);
     console.log("Email: " + emailid);
@@ -499,6 +462,19 @@ var doc = new jsPDF();
 					const lQuantity = parseInt(document.querySelector(".l-input").value);
 					const xlQuantity = parseInt(document.querySelector(".xl-input").value);
 					const xxlQuantity = parseInt(document.querySelector(".xxl-input").value);
+
+					// Calculate the sum of all size quantities
+					const sum = xsQuantity + sQuantity + mQuantity + lQuantity + xlQuantity + xxlQuantity;
+
+					// Check if the sum is zero
+					if (sum === 0) {
+					Swal.fire({
+						icon: 'error',
+						title: 'No Size Selected',
+						text: 'Please select the quantity',
+					});
+					return; // Stop further execution of the code
+					}
   
 					// Prepare the request payload
 					const payload = {
@@ -521,7 +497,12 @@ var doc = new jsPDF();
                   body: JSON.stringify(payload),
                 })
                   .then(response => {
-                    if (response.ok) {
+					  if (response.ok) {
+						Swal.fire({
+						icon: 'success',
+						title: 'Order Confirmed',
+						text: 'Our agent will get back to you soon with the quotation.',
+					});
                       return response.json();
                     } else {
                       throw new Error("Request failed with status: " + response.status);
