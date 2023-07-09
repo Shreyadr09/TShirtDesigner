@@ -12,9 +12,6 @@ var line1;
 var line2;
 var line3;
 var line4;
-
-
-
  	$(document).ready(function() {
 		//setup front side canvas 
  		canvas = new fabric.Canvas('tcanvas', {
@@ -225,38 +222,76 @@ var line4;
 				//
 			}
 		});		
-		$('#text-fontcolor').miniColors({
-			change: function(hex, rgb) {
-			  var activeObject = canvas.getActiveObject();
-		      if (activeObject && activeObject.type === 'text') {
-		    	  activeObject.fill = this.value;
-		    	  canvas.renderAll();
-		      }
-			},
-			open: function(hex, rgb) {
-				//
-			},
-			close: function(hex, rgb) {
-				//
-			}
-		});
+		// $('#text-fontcolor').miniColors({
+		// 	change: function(hex, rgb) {
+		// 	  var activeObject = canvas.getActiveObject();
+		//       if (activeObject && activeObject.type === 'text') {
+		//     	  activeObject.fill = this.value;
+		//     	  canvas.renderAll();
+		//       }
+		// 	},
+		// 	open: function(hex, rgb) {
+		// 		//
+		// 	},
+		// 	close: function(hex, rgb) {
+		// 		//
+		// 	}
+		// });
 		
-		$('#text-strokecolor').miniColors({
-			change: function(hex, rgb) {
-			  var activeObject = canvas.getActiveObject();
-		      if (activeObject && activeObject.type === 'text') {
-		    	  activeObject.strokeStyle = this.value;
-		    	  canvas.renderAll();
-		      }
-			},
-			open: function(hex, rgb) {
-				//
-			},
-			close: function(hex, rgb) {
-				//
+		canvas.on("selection:cleared", function () {
+			document.getElementById("text-fontcolor").value = "#000000";
+		});
+		  
+		var fontColorInput = document.getElementById("text-fontcolor");
+		fontColorInput.addEventListener("input", function () {
+			var color = fontColorInput.value;
+			var activeObject = canvas.getActiveObject();
+			if (activeObject && activeObject.type === "text") {
+			activeObject.fill = color;
+			canvas.renderAll();
 			}
 		});
+		// $('#text-strokecolor').miniColors({
+		// 	change: function(hex, rgb) {
+		// 	  var activeObject = canvas.getActiveObject();
+		//       if (activeObject && activeObject.type === 'text') {
+		//     	  activeObject.strokeStyle = this.value;
+		//     	  canvas.renderAll();
+		//       }
+		// 	},
+		// 	open: function(hex, rgb) {
+		// 		//
+		// 	},
+		// 	close: function(hex, rgb) {
+		// 		//
+		// 	}
+		// });
 	
+		   var strokeColorInput = document.getElementById("text-strokecolor");
+
+			canvas.on("selection:created", function (event) {
+				var activeObject = event.target;
+				if (activeObject && activeObject.type === "text") {
+				strokeColorInput.value = activeObject.stroke;
+				}
+			});
+
+			canvas.on("selection:updated", function (event) {
+				var activeObject = event.target;
+				if (activeObject && activeObject.type === "text") {
+				strokeColorInput.value = activeObject.stroke;
+				}
+			});
+
+			strokeColorInput.addEventListener("input", function () {
+				var color = strokeColorInput.value;
+
+				var activeObject = canvas.getActiveObject();
+				if (activeObject && activeObject.type === "text") {
+				activeObject.strokeStyle = color;
+				canvas.renderAll();
+				}
+			});
 		//canvas.add(new fabric.fabric.Object({hasBorders:true,hasControls:false,hasRotatingPoint:false,selectable:false,type:'rect'}));
 	   $("#drawingArea").hover(
 	        function() { 	        	
@@ -353,13 +388,16 @@ orderConfirmationButton.addEventListener("click", async () => {
   if (cookieValue) {
     console.log("Cookie value: " + cookieValue);
     console.log("Email: " + emailid);
-	document.getElementById('userIcon').style.display = 'none';
-    document.getElementById('emailText').innerText = emailid;
+    document.getElementById('userIcon').style.display = 'none';
+    document.getElementById('emailText').innerText = emailid.charAt(0).toUpperCase();
+    document.getElementById('emailBox').innerText = emailid;
     document.getElementById('emailText').style.display = 'block';
-    document.getElementById('emailText').style.fontSize = '15px';
+    document.getElementById('emailText').style.fontSize = '28px';
+    document.getElementById('emailText').style.color = '#FE4536';
+    document.getElementById('emailText').style.fontFamily = 'Lobster';
     document.getElementById('emailText').style.fontWeight = 'bold';
-    document.getElementById('emailText').style.marginRight = '140px';
-    document.getElementById('ellipse-div').style.backgroundColor = 'transparent';
+    document.getElementById('emailText').style.marginRight = '14px';
+    document.getElementById('ellipse-div').style.backgroundColor = '#FFF1F0';
   } else {
     console.log("Cookie not found");
 	nocookie = nocookie + 1;
@@ -575,20 +613,20 @@ $('#flip').click(function () {
 	    	//display text editor	    	
 	    	$("#texteditor").css('display', 'block');
 	    	$("#text-string").val(selectedObject.getText());	    	
-	    	$('#text-fontcolor').miniColors('value',selectedObject.fill);
+	    	// $('#text-fontcolor').miniColors('value',selectedObject.fill);
 	    	$('#text-strokecolor').miniColors('value',selectedObject.strokeStyle);	
 	    	$("#imageeditor").css('display', 'block');
 	    }
 	    else if (selectedObject && selectedObject.type === 'image'){
 	    	//display image editor
-	    	$("#texteditor").css('display', 'none');	
+	    	// $("#texteditor").css('display', 'none');	
 	    	$("#imageeditor").css('display', 'block');
 	    }
 	  }
 	 function onSelectedCleared(e){
-		 $("#texteditor").css('display', 'none');
+		//  $("#texteditor").css('display', 'none');
 		 $("#text-string").val("");
-		 $("#imageeditor").css('display', 'none');
+		//  $("#imageeditor").css('display', 'none');
 	 }
 	 function setFont(font){
 		  var activeObject = canvas.getActiveObject();

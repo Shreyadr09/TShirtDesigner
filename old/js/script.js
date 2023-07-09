@@ -46,12 +46,15 @@ function checkCookies() {
     console.log("Cookie value: " + cookieValue);
     console.log("Email: " + emailid);
     document.getElementById('userIcon').style.display = 'none';
-    document.getElementById('emailText').innerText = emailid;
+    document.getElementById('emailText').innerText = emailid.charAt(0).toUpperCase();
+    document.getElementById('emailBox').innerText = emailid;
     document.getElementById('emailText').style.display = 'block';
-    document.getElementById('emailText').style.fontSize = '15px';
+    document.getElementById('emailText').style.fontSize = '28px';
+    document.getElementById('emailText').style.color = '#FE4536';
+    document.getElementById('emailText').style.fontFamily = 'Lobster';
     document.getElementById('emailText').style.fontWeight = 'bold';
-    document.getElementById('emailText').style.marginRight = '140px';
-    document.getElementById('ellipse-div').style.backgroundColor = 'transparent';
+    document.getElementById('emailText').style.marginRight = '14px';
+    document.getElementById('ellipse-div').style.backgroundColor = '#FFF1F0';
   } else {
     console.log("Cookie not found");
   }

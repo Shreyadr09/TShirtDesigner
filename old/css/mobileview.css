@@ -1,0 +1,71 @@
+/* Mobile View CSS */
+
+@media (min-width: 769px) {
+  .logo-container .mobile-logo{
+    display: none;
+  }
+}
+
+
+/* navbar styling */
+@media (max-width: 768px) {
+  .logo-container .mobile-logo{
+    height: 45px;
+    margin-left: 0px;
+  }
+  .logo-container .logo{
+    display: none;
+  }
+
+  .page-head {
+    font-size: 22px;
+  }
+
+  /* Adjustments for the right icons */
+  .right-icons .ellipse-div:nth-child(2){
+    display: none;
+  }
+
+  /* Adjustments for the ellipse div */
+  .ellipse-div {
+    width: 47px;
+    height: 47px;
+    text-align: center;
+    margin: 0px;
+  }
+
+  /* Adjustments for the email text */
+
+  .email-container {
+  position: relative;
+  display: inline-block;
+}
+
+.email-box {
+  display: none;
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  transform: translateX(-50%);
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.email-container:hover .email-box {
+  display: block;
+}
+
+  /* Adjustments for the user icon */
+  .fa-user {
+    margin: -2px 0px 3px 0px;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+    
+}

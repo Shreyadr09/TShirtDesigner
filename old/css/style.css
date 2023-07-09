@@ -31,13 +31,17 @@ nav {
 .logo-container {
     display: flex;
     align-items: center;
-}
-.logo-container img{
-    width: 200px;
-    height: 30.81px;
-    flex-shrink: 0;
+    overflow: hidden;
 }
 
+.logo-container .logo {
+    max-width: 200px;
+    height: 30.81px;
+}
+
+/* .logo-container .mobile-logo{
+    display: none;
+} */
 .header-container
 {
     width: 100%;
@@ -72,18 +76,7 @@ nav {
 
 }
 
-/* .ellipse-div {
-  position: relative;
-  width: 40px;
-  height: 40px;
-  margin-right: 10px;
-  border-radius: 50%;
-  background-color: #fff1f0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-*/
+
 .ellipse-div {
     display: flex;
     justify-content: center;
@@ -92,11 +85,11 @@ nav {
     height: 45px;
     border-radius: 50%;
     background-color: #fff1f0;
-    margin-right: 10px; /* Adjust the margin value as needed */
+    margin-right: 10px; 
   }
 
   .ellipse-div:last-child {
-    margin-right: 0; /* Remove the margin on the last circle */
+    margin-right: 0; 
   }
 
   .ellipse-div a {
@@ -126,6 +119,31 @@ nav {
 .ellipse-div a span {
     font-size: 29px; 
 }
+
+
+.email-container {
+  position: relative;
+  display: inline-block;
+}
+
+.email-box {
+  display: none;
+  position: absolute;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f9f9f9;
+  color: #333333;
+  font-size: 12px;
+  padding:3px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.email-container:hover .email-box {
+  display: block;
+}
+
 
 /* right bar styling */
 .sizeadd {
@@ -368,58 +386,7 @@ margin-top: 100px;
 
 
 /* Color Variables */
-.c-checkbox {
-    display: none;
-}
 
-.c-formContainer {
-    position: relative;
-    font-weight: 700;
-}
-
-.c-formBox {
-    margin-top: 35px;
-    position: relative;
-    width: 213px;
-    height: 30px;
-    border-radius: 30px;
-    background-color: white;
-}
-
-.c-form {
-    display: flex;
-    padding: 0 10px;
-    justify-content: left;
-    box-sizing: border-box;
-}
-
-.c-form__input {
-    font: inherit;
-    color: #ffcccc;
-    padding: 0 0.714em;
-    width: 100%;
-    height: 100%;
-    background-color: transparent !important;
-    box-shadow: none !important;
-    outline: none;
-    border: none !important;
-}
-
-.c-form__button {
-    font: inherit;
-    border: 0;
-    outline: 0;
-    border-radius: 5em;
-    color: #ffffff;
-    font-weight: 600;
-    padding: 0;
-    height: 30px;
-    width: 40px;
-    font-size: 16px;
-    background-color: #000000;
-    margin-left: auto;
-    margin-right: -10px;
-}
 
 .choosefile {
     color: black;
@@ -541,22 +508,6 @@ font-family: Rubik;
 color: #fff;
 text-align: center;
 }
-.sidebar {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    height: 100vh;
-    left: 0;
-    display: flex;
-    align-items: center;
-    background: linear-gradient(to top, #c4c5c7 0%, #dcdddf 52%, #ebebeb 100%);
-    width: 70px;
-    overflow: hidden;
-    transition: width 0.2s linear;
-    background: #10111e;
-    box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
-
-}
 
 
 
@@ -564,57 +515,6 @@ text-align: center;
     width: 60px;
     height: 60px;
     border-radius: 50%;
-}
-
-.sidebar a {
-    position: relative;
-    color: white;
-    font-size: 14px;
-    display: table;
-    width: 300px;
-    padding: 20px;
-    text-decoration: none;
-}
-
-.sidebar .fas,
-.fa-solid {
-
-    position: relative;
-    width: 70px;
-    height: 40px;
-    top: 14px;
-    font-size: 20px;
-    color: #fff;
-}
-
-
-.nav-item {
-    position: relative;
-    top: 12px;
-    margin-left: 10px;
-    align-items: center;
-    color: #000000;
-}
-
-
-.sidebar ul {
-    list-style-type: none;
-    margin-left: 4px;
-}
-
-.fa-t {
-    letter-spacing: 2px;
-}
-
-.option-box {
-    height: 150px;
-    width: 250px;
-    border-radius: 10px;
-    box-shadow: 0px 20px 35px rgba(0, 0, 0, 0.1);
-    overflow-y: 0;
-    background-color: #747691;
-    padding: 10px;
-    z-index: 20;
 }
 
 /* size chart pop up  */

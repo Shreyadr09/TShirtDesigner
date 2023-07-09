@@ -301,6 +301,7 @@ var line4;
 	 });//doc ready
 	 
 	 
+	 
 	 function getRandomNum(min, max) {
 	    return Math.random() * (max - min) + min;
 	 }
@@ -311,22 +312,22 @@ var line4;
 	    selectedObject.hasRotatingPoint = true
 	    if (selectedObject && selectedObject.type === 'text') {
 	    	//display text editor	    	
-	    	$("#texteditor").css('display', 'block');
+	    	// $("#texteditor").css('display', 'block');
 	    	$("#text-string").val(selectedObject.getText());	    	
 	    	$('#text-fontcolor').miniColors('value',selectedObject.fill);
 	    	$('#text-strokecolor').miniColors('value',selectedObject.strokeStyle);	 
 	    	$("#imageeditor").css('display', 'block');
 	    }
-	    else if (selectedObject && selectedObject.type === 'image'){
-	    	//display image editor
-	    	$("#texteditor").css('display', 'none');	
-	    	$("#imageeditor").css('display', 'block');	    	
-	    }
+	    // else if (selectedObject && selectedObject.type === 'image'){
+	    // 	//display image editor
+	    // 	$("#texteditor").css('display', 'none');	
+	    // 	$("#imageeditor").css('display', 'block');	    	
+	    // }
 	  }
 	 function onSelectedCleared(e){
-		 $("#texteditor").css('display', 'none');
+		//  $("#texteditor").css('display', 'none');
 		 $("#text-string").val("");
-		 $("#imageeditor").css('display', 'none');
+		 $("#imageeditor").css('display', 'block');
 	 }
 	 function setFont(font){
 		  var activeObject = canvas.getActiveObject();
