@@ -54,6 +54,11 @@
     ================================================== -->
     <div class="container" style="margin-top: 30px;">
         <section id="typography">
+
+            <div class="size-icon">
+                <i class="fa-solid fa-angles-left"></i>
+            </div>
+
             <div class="sidebar">
                 <ul>
                     <li><a href="#" class="icon" id="icon1" onclick="toggleSidebar(1)"><i class="fa-solid fa-t"></i></a>
@@ -67,10 +72,25 @@
                 </ul>
             </div>
 
+            <footer>
+                <div class="bottom-bar">
+                <ul>
+                    <li><a href="#" class="icon" id="icon1" onclick="toggleSidebar(1)"><i class="fa-solid fa-t"></i></a>
+                    </li>
+                    <li><a href="#" class="icon" id="icon2" onclick="toggleSidebar(2)"><i
+                                    class="fa-solid fa-image"></i></a>
+                    </li>
+                    <li><a href="#" class="icon" id="icon3" onclick="toggleSidebar(3)"><i
+                                    class="fa-solid fa-fill-drip"></i></a>
+                    </li>
+                </ul>
+            </div>
+            </footer>
+
             <div id="sidebar1" class="sidebar-content">
                 <div class="option-box1" id="text-div">
                     <h3
-                        style="font-family: 'Telex', sans-serif; font-weight: bold; line-height: 1; color: #fff;  font-size: 17px;margin-bottom: 20px;">
+                        style="font-family: 'Telex', sans-serif; font-weight: bold; line-height: 1; color: #fff;  font-size: 22px;margin-bottom: 20px; text-align: center;">
                         Add a Text
                     </h3>
 
@@ -97,26 +117,28 @@
                                 </select>
                             </div>
 
-                            <div class=" color-preview1" title="FontColor">
-                                <div class="optionname">
-                                    <h3>Font Color : </h3>
+                            <div class="color-options">
+                                <div class="color-preview1" title="FontColor">
+                                    <div class="optionname">
+                                        <h3>Font : </h3>
+                                    </div>
+                                    <div class="optionTask">
+
+                                        <input type="color" class="favcolor1" id="text-fontcolor" value=" #0000000"
+                                            name="favcolor1" value=""><br>
+
+                                    </div>
                                 </div>
-                                <div class="optionTask">
-
-                                    <input type="color" class="favcolor1" id="text-fontcolor" value=" #0000000"
-                                        name="favcolor1" value=""><br>
-
-                                </div>
-                            </div>
-                            <div class="color-preview1" title="StrokeColor">
-                                <div class="optionname">
-                                    <h3>Stroke Color : </h3>
-                                </div>
+                                <div class="color-preview1" title="StrokeColor">
+                                    <div class="optionname">
+                                        <h3>Stroke : </h3>
+                                    </div>
 
 
-                                <div class="optionTask">
-                                    <input type="color" class="favcolor1" id="text-strokecolor" name="favcolor1"
-                                        value="#ffffff"><br>
+                                    <div class="optionTask">
+                                        <input type="color" class="favcolor1" id="text-strokecolor" name="favcolor1"
+                                            value="#ffffff"><br>
+                                    </div>
                                 </div>
                             </div>
                             <div class="textbolditalicunderlien">
@@ -184,24 +206,35 @@
             </div>
 
             <div id="sidebar2" class="sidebar-content">
-                <div class="option-box">
-                    <p
-                        style="font-family: 'Telex',sanss-serif;font-weight: bold;line-height: 1;color: #10111E;text-rendering: optimizelegibility; font-size: 17px;">
-                        Add an Image</p>
-                    <div id="avatarlist">
-                        <img style="cursor:pointer;" class="img-polaroid" src="img/invisibleman.jpg">
+                <div class="option-box1">
+                    <h3
+                        style="margin-top: -30px; font-family: 'Telex', sans-serif; font-weight: bold; line-height: 1; color: #fff;  font-size: 22px;margin-bottom: 10px; text-align: center;">
+                        Add an Image</h3>
+                    <div class="avatarlist">
+                        <div id="avatarlist" style="margin-bottom: 20px;">
+                            <img style="cursor:pointer;" class="img-polaroid" src="img/invisibleman.jpg">
+                        </div>
+                        <input class="choosefile" type="file" id="avatarfile" accept="image/*">
                     </div>
-                    <input class="choosefile" type="file" id="avatarfile" accept="image/*">
                 </div>
             </div>
             <div id="sidebar3" class="sidebar-content">
-                <div class="option-box">
-                    <p
-                        style="font-family: 'Telex',sans-serif;font-weight: bold;line-height: 1;color: #10111E;text-rendering: optimizelegibility; font-size: 17px;">
-                        Choose a color</p>
-                    <ul class="nav">
-                        <li id="colorListItem" class="color-preview" title="Select a colour">
-                            <input type="color" class="favcolor" id="favcolor" name="favcolor" value="#ffffff"><br>
+                <div class="option-box1">
+                    <h3
+                        style="font-family: 'Telex', sans-serif; font-weight: bold; line-height: 1; color: #fff;  font-size: 22px;margin-bottom: 30px; text-align: center;">
+                        Material Color</h3>
+
+                    <p style="color: rgb(216, 197, 197);
+        font-family: 'Telex', sans-serif;
+        font-weight: bold;
+        line-height: 1.6;
+        font-size: 14px;
+        font-style: italic;
+        text-align: center;
+        margin-bottom: 30px;">Discover Your Perfect Hue: Choose a Color that Reflects Your Style!</p>
+                    <ul class="nav" style="display: flex;">
+                        <li id="colorListItem" class="color-preview2" title="Select a colour" style="justify-content: center;">
+                            <input type="color" class="favcolor2" id="favcolor" name="favcolor" value="#ffffff"><br>
                         </li>
                     </ul>
                 </div>
@@ -278,9 +311,9 @@
                         <div class="pull-right" id="imageeditor" style="display:block">
                             <div class="btn-group">
                                 <button class="btn" id="bring-to-front" title="Bring to Front"><i
-                                        class="icon-fast-backward rotate" style="height:19px;"></i></button>
+                                        class="icon-fast-backward rotate" style="height:16px;"></i></button>
                                 <button class="btn" id="send-to-back" title="Send to Back"><i
-                                        class="icon-fast-forward rotate" style="height:19px;"></i></button>
+                                        class="icon-fast-forward rotate" style="height:16px;"></i></button>
                                 <button id="flip" type="button" class="btn" title="Show Back View"><i
                                         class="icon-retweet" style="height:19px;"></i></button>
                                 <button id="remove-selected" class="btn" title="Delete selected item"><i
@@ -290,98 +323,99 @@
                     </div>
 
                     <!--	EDITOR      -->
-                    <div id="shirtDiv" class="page" style="position: relative; display: flex; justify-content: center; align-items: center;">
-                        <img style="width: 419px; height: 498px;" name="tshirtview" id="tshirtFacing" src="img/crew_front.png">
-                        <div id="drawingArea" style="position: absolute; top: 80px; left: 190px; z-index: 0;">
+                    <div id="shirtDiv" class="page" >
+                        
+                        <img name="tshirtview" id="tshirtFacing" src="../old/img/crew_front.png">
+                        <div id="drawingArea" class="drawingArea">
                             <canvas id="tcanvas" width="180" height="320" class="hover" style=" -webkit-user-select: none;"></canvas>
                         </div>
                     </div>
+                    
                 </div>
 
                 <div class="span3 sizeadd">
-                    <div class="size-box" style="height: 480px;">
-                        <div class="size-chart" id="sizeChartIcon" style="color: #000000; margin-top: 190px; margin-bottom: 30px;">SIZE CHART<i id="sizeChartIconArrow" class="fa-solid fa-chevron-down" style="color: #000000; display: inline; top: -3px; margin-left: 15px; font-weight: bold;"></i></div>
-                        <div id="sizeChartModal" class="modal" style="display: none;">
-                            <div class="modal-content">
-                                <img src="/old/img/size.png" alt="Size Chart" />
+                    <div class="size-box">
+                        <div class="size-chart" id="sizeChartIcon">SIZE CHART<i id="sizeChartIconArrow" class="fa-solid fa-chevron-down" style="color: #000000; display: inline; top: -3px; margin-left: 15px; font-weight: bold;"></i></div>
+                            <div id="sizeChartModal" class="modal" style="display: none;">
+                                <div class="modal-content">
+                                    <img src="/old/img/size.png" alt="Size Chart" />
+                                </div>
                             </div>
-                        </div>
-                        <div id="sizeChartModal">
-                        <table id="table" class="table" style="margin-left: 38px;">
-                            <tr>
-                                <td align="right">
-                                    <div class="quantity-container">
-                                        <div class="quantity-input">
-                                            <button class="decrement">-</button>
-                                            <input class="quantity xs-input" min="0" value="0" type="number">
-                                            <button class="increment">+</button>
-                                        </div>
-                                        <div style="margin-top: 5px; margin-left: 4px;">&emsp;XS</div>
-                                    </div>
-                                </td>
-                                <td align="right">
-                                    <div class="quantity-container">
-                                        <div class="quantity-input">
-                                            <button class="decrement">-</button>
-                                            <input class="quantity s-input" min="0" value="0" type="number">
-                                            <button class="increment">+</button>
-                                        </div>
-                                        <div style="margin-top: 5px; margin-left: 6px;">&emsp;S</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="right">
-                                    <div class="quantity-container">
-                                        <div class="quantity-input">
-                                            <button class="decrement">-</button>
-                                            <input class="quantity m-input" min="0" value="0" type="number">
-                                            <button class="increment">+</button>
-                                        </div>
-                                        <div style="margin-top: 5px; margin-left: 6px;">&emsp;M</div>
-                                    </div>
-                                </td>
-                                <td align="right">
-                                    <div class="quantity-container">
-                                        <div class="quantity-input">
-                                            <button class="decrement">-</button>
-                                            <input class="quantity l-input" min="0" value="0" type="number">
-                                            <button class="increment">+</button>
-                                        </div>
-                                        <div style="margin-top: 5px; margin-left: 6px;">&emsp;L</div>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td align="right">
-                                    <div class="quantity-container">
-                                        <div class="quantity-input">
-                                            <button class="decrement">-</button>
-                                            <input class="quantity xl-input" min="0" value="0" type="number">
-                                            <button class="increment">+</button>
-                                        </div>
-                                        <div style="margin-top: 5px; margin-left: 4px;">&emsp;XL</div>
-                                    </div>
-                                </td>
-                                <td align="right">
-                                    <div class="quantity-container">
-                                        <div class="quantity-input">
-                                            <button class="decrement">-</button>
-                                            <input class="quantity xxl-input" min="0" value="0" type="number">
-                                            <button class="increment">+</button>
-                                        </div>
-                                        <div style="margin-top: 5px;">&emsp;XXL</div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                            </p>
-                            <button type="button" class="place-order" name="addToTheBag" id="addToTheBag"><p>Confirm Order</p></button>
+                            <div id="sizeChartModal">
+                                <table id="table" class="table">
+                                    <tr>
+                                        <td align="right">
+                                            <div class="quantity-container">
+                                                <div class="quantity-input">
+                                                    <button class="decrement">-</button>
+                                                    <input class="quantity xs-input" min="0" value="0" type="number">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                                <div style="margin-top: 5px; margin-left: 4px;">&emsp;XS</div>
+                                            </div>
+                                        </td>
+                                        <td align="right">
+                                            <div class="quantity-container">
+                                                <div class="quantity-input">
+                                                    <button class="decrement">-</button>
+                                                    <input class="quantity s-input" min="0" value="0" type="number">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                                <div style="margin-top: 5px; margin-left: 6px;">&emsp;S</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">
+                                            <div class="quantity-container">
+                                                <div class="quantity-input">
+                                                    <button class="decrement">-</button>
+                                                    <input class="quantity m-input" min="0" value="0" type="number">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                                <div style="margin-top: 5px; margin-left: 6px;">&emsp;M</div>
+                                            </div>
+                                        </td>
+                                        <td align="right">
+                                            <div class="quantity-container">
+                                                <div class="quantity-input">
+                                                    <button class="decrement">-</button>
+                                                    <input class="quantity l-input" min="0" value="0" type="number">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                                <div style="margin-top: 5px; margin-left: 6px;">&emsp;L</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">
+                                            <div class="quantity-container">
+                                                <div class="quantity-input">
+                                                    <button class="decrement">-</button>
+                                                    <input class="quantity xl-input" min="0" value="0" type="number">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                                <div style="margin-top: 5px; margin-left: 4px;">&emsp;XL</div>
+                                            </div>
+                                        </td>
+                                        <td align="right">
+                                            <div class="quantity-container">
+                                                <div class="quantity-input">
+                                                    <button class="decrement">-</button>
+                                                    <input class="quantity xxl-input" min="0" value="0" type="number">
+                                                    <button class="increment">+</button>
+                                                </div>
+                                                <div style="margin-top: 5px;">&emsp;XXL</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                                <button type="button" class="place-order" name="addToTheBag" id="addToTheBag"><p>Confirm Order</p></button>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
     </div><!-- /container -->
 
 
@@ -464,6 +498,7 @@
             shirt.style.backgroundColor = colorPicker.value;
         });
     </script>
+
 
 </body>
 

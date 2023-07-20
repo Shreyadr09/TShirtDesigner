@@ -39,28 +39,15 @@
 // console.log("Cookie value is : ",cookieValue)
 // document.body.innerHTML = `Received Cookie: ${cookieValue}`;
 
-function checkCookies() {
-  var cookieValue = Cookies.get('Authorization');
-  var emailid = Cookies.get('Email');
-  if (cookieValue) {
-    console.log("Cookie value: " + cookieValue);
-    console.log("Email: " + emailid);
-    document.getElementById('userIcon').style.display = 'none';
-    document.getElementById('emailText').innerText = emailid.charAt(0).toUpperCase();
-    document.getElementById('emailBox').innerText = emailid;
-    document.getElementById('emailText').style.display = 'block';
-    document.getElementById('emailText').style.fontSize = '28px';
-    document.getElementById('emailText').style.color = '#FE4536';
-    document.getElementById('emailText').style.fontFamily = 'Lobster';
-    document.getElementById('emailText').style.fontWeight = 'bold';
-    document.getElementById('emailText').style.marginRight = '14px';
-    document.getElementById('ellipse-div').style.backgroundColor = '#FFF1F0';
-  } else {
-    console.log("Cookie not found");
-  }
-}
 
-// Call the function on page load
-window.onload = function() {
-  checkCookies();
-};
+
+
+
+// opening the size chart
+$(document).ready(function() {
+    $(".size-icon").click(function() {
+        $(".sizeadd").toggle();
+    });
+});
+
+

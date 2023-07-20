@@ -146,6 +146,10 @@ nav {
 
 
 /* right bar styling */
+.size-icon{
+    display: none;
+}
+
 .sizeadd {
   position: fixed;
   right: 0;
@@ -158,7 +162,7 @@ nav {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 
 .size-chart {
@@ -170,12 +174,30 @@ font-weight: 600;
 font-family: Rubik;
 color: #000;
 text-align: center;
-margin-top: 100px;
+margin-top: 190px; 
+margin-bottom: 30px;
+left: 2%;
 }
 
 /* shirt div styling */
 
+.page{
+    position: relative; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
 
+.page img{
+    width: 419px;
+    height: 498px;
+}
+.drawingArea{
+    position: absolute; 
+    top: 80px; 
+    left: 190px; 
+    z-index: 0;
+}
 
 .footer {
     padding: 70px 0;
@@ -390,7 +412,7 @@ margin-top: 100px;
 
 .choosefile {
     color: black;
-    /* Set the text color of the chosen file to black */
+    margin-left: 35%;
 }
 
 .choosefile::-webkit-file-upload-button {
@@ -429,6 +451,9 @@ margin-top: 100px;
 
 .place-order:hover {
     background-color: #D23323;
+}
+.table{
+    margin-left: 38px;
 }
 
 /* quantity button styling  */
@@ -528,3 +553,4 @@ text-align: center;
 .rotate {
   transform: rotate(180deg);
 }
+

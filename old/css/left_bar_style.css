@@ -193,6 +193,7 @@
     /* width: 40px; */
     font-size: 16px;
     background-color: #fff;
+    
 
 }
 
@@ -200,6 +201,28 @@
     display: flex;
     flex-direction: column;
 }
+
+.avatarlist {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  white-space: nowrap;
+  padding-top: 30px;
+}
+
+#avatarlist {
+  display: inline-block;
+}
+
+#avatarlist img {
+  display: inline-block;
+  width: 100px; 
+  height: 100px; 
+  margin-right: 10px; 
+}
+
 
 
 
@@ -242,6 +265,24 @@
     height: 40px;
     padding: 0;
 }
+.color-preview2 {
+    /* border: 1px solid #CCC; */
+    /* margin: 2px; */
+    /* zoom: 1; */
+    /* vertical-align: top; */
+    width: 250px;
+    /* background: green; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 10px; */
+    /* grid-template-columns: 1fr 3fr; */
+
+    /* cursor: pointer; */
+    /* overflow: hidden; */
+    height: 40px;
+    padding: 0;
+}
 
 .color-preview1 h3 {
     color: #fff;
@@ -249,6 +290,14 @@
 }
 
 .color-preview1 .favcolor1 {
+    background-color: transparent;
+    outline: none;
+    border: none;
+    box-shadow: none;
+    width: 100px;
+}
+
+.color-preview2 .favcolor2 {
     background-color: transparent;
     outline: none;
     border: none;
@@ -265,6 +314,17 @@
 
     box-shadow: none;
 }
+
+.color-preview2 .favcolor2:active {
+
+    box-shadow: none;
+}
+
+.color-preview2 .favcolor2:focus {
+
+    box-shadow: none;
+}
+
 
 .inputfont {
     width: 250px;
@@ -295,3 +355,38 @@
     display: flex;
     justify-content: space-between;
 }
+
+.bottom-bar{
+    display: none;
+}
+
+
+.color-preview1 {
+    /* border: 1px solid #CCC; */
+    /* margin: 2px; */
+    /* zoom: 1; */
+    /* vertical-align: top; */
+    width: 250px;
+    /* background: green; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 10px; */
+    /* grid-template-columns: 1fr 3fr; */
+
+    /* cursor: pointer; */
+    /* overflow: hidden; */
+    height: 40px;
+    padding: 0;
+}
+/* 
+.span6 .clearfix {
+  position: fixed;
+  top: 15%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+} */
