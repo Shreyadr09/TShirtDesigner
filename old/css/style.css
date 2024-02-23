@@ -9,7 +9,7 @@
 }
 
 body {
-    padding-top: 60px;
+    padding-top: 55px;
     overflow-x: hidden;
 }
 /* navbar styling*/
@@ -35,7 +35,7 @@ nav {
 }
 
 .logo-container .logo {
-    max-width: 200px;
+    max-width: 199px;
     height: 30.81px;
 }
 
@@ -65,7 +65,7 @@ nav {
   	color: #10111e;
   	text-align: center;
  
-  	width: 203px;
+  	width: 204px;
   	height: 17px;
 }
 
